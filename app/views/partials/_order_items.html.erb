@@ -1,0 +1,13 @@
+<tr>
+
+  <td><%= order_item.item.title %></td>
+  <td><%= order_item.item_quantity %></td>
+  <td><%= (order_item.item_quantity.to_i * order_item.item_price.to_i) %></td>
+  <td><%= @order.status.capitalize %>
+    <% if @order.status == "completed" || @order.status == "cancelled" %>
+    : <%= @order.updated_at %>
+    <% end %></td>
+  <td><%= @order.total_price %></td>
+  <td><%= @order.created_at %></td>
+
+</tr>
